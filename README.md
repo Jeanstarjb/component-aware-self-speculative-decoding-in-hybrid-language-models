@@ -1,89 +1,101 @@
-# 🚀 Component-Aware Self-Speculative Decoding in Hybrid Language Models
+# Component-Aware Self-Speculative Decoding in Hybrid Language Models
 
 ### Authors: Hector Borobia, Elies Seguí-Mas, Guillermina Tormo-Carbó  
-📄 **Paper URL:** [Read the full paper on arXiv](https://arxiv.org/pdf/2605.01106v1)
+**Paper URL:** [Read the full paper on arXiv](https://arxiv.org/pdf/2605.01106v1)
 
 ---
 
-## 🌟 Overview
+## Overview
 
-✨ **What is speculative decoding?**  
-Imagine you’re writing a sentence. Instead of waiting to decide each word one by one, you draft some ideas quickly, then check if they make sense. Speculative decoding speeds up this process for language models—producing faster, smarter results!  
+### What is Speculative Decoding?
+Speculative decoding is a technique that accelerates the process of generating text in language models. Instead of deciding each token sequentially, the model drafts multiple candidate tokens in parallel and validates them for coherence and relevance. This approach enables faster and more efficient text generation.
 
-🔍 **What’s new here?**  
-This project introduces **component-aware self-speculative decoding**, a groundbreaking method that leverages the internal architecture of hybrid language models. Unlike traditional approaches that rely on external tools, this method uses the model’s own components to draft candidate tokens internally—at zero extra cost!  
-
----
-
-## 🤖 Key Features of the Code
-
-This repository includes Python/PyTorch implementations to:  
-1. **Accelerate inference** using speculative decoding techniques.  
-2. **Evaluate hybrid language models** like Falcon-H1 and Qwen3.5, alongside pure Transformer baselines.  
-3. **Analyze architectural patterns** to predict speculative decoding efficiency—without needing to run decoding experiments!  
+### What’s New in This Project?
+This repository presents **component-aware self-speculative decoding**, a novel method that leverages the internal components of hybrid language models for speculative decoding. Unlike traditional approaches that rely on external tools or adjustments, this method utilizes the model's inherent architecture, offering faster inference without additional computational cost.
 
 ---
 
-## 🧠 What Does This Mean?
+## Key Features
 
-Hybrid language models are like multi-talented teams: they combine different components (like linear attention layers and Transformers) to process language better. This project digs deep into these models' inner workings to figure out:  
-- How their unique architectures affect speculative decoding.  
-- Why some hybrids perform much better than others.  
+The Python/PyTorch code provided in this repository enables the following:
 
-For example:  
-- **Parallel hybrids** (Falcon-H1) achieve high acceptance rates of candidate drafts—up to 68%! 🚀  
-- **Sequential hybrids** (Qwen3.5), on the other hand, struggle with only 3.8% acceptance. 😅  
+1. **Accelerated Inference**  
+   Implements speculative decoding techniques to speed up text generation in hybrid language models.  
 
-The difference? It’s all about how each architecture integrates its components.  
+2. **Performance Evaluation**  
+   Benchmarks speculative decoding efficiency for hybrid models (e.g., Falcon-H1 and Qwen3.5) and compares them to standard Transformer-based architectures.
 
----
-
-## 📊 Results Breakdown
-
-Here’s the magic in numbers:  
-- **Scale doesn't matter!** Falcon-H1 performs consistently at both small (0.5B) and large (3B) scales.  
-- **Predictive insights!** A clever ablation study shows that perplexity degradation can predict speculative decoding success.  
-
-To sum it up: the better the model’s internal composition, the faster and smarter its speculative decoding becomes.  
+3. **Architectural Analysis**  
+   Investigates how the internal design of hybrid models influences speculative decoding performance, providing predictive insights without requiring extensive experiments.
 
 ---
 
-## 🛠️ How to Use the Code
+## Core Concepts
 
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/your-repo/component-aware-decoding.git
-   cd component-aware-decoding
-   ```
+Hybrid language models combine multiple architectural components, such as linear attention layers and Transformer blocks, to enhance text generation capabilities. This project focuses on understanding how these components interact and affect speculative decoding efficiency. 
 
-2. Install dependencies:  
-   ```bash
-   pip install -r requirements.txt
-   ```
+For example:
+- **Parallel hybrids** (e.g., Falcon-H1) demonstrate high acceptance rates for candidate tokens (up to 68%).  
+- **Sequential hybrids** (e.g., Qwen3.5) struggle with low acceptance rates (around 3.8%).  
 
-3. Run the speculative decoding experiments on hybrid models:  
-   ```bash
-   python decode_hybrid.py --model falcon-h1 --draft_length 2
-   ```
-
-4. Visualize your results with built-in plotting tools:  
-   ```bash
-   python plot_results.py
-   ```
+This disparity highlights the importance of architectural integration in determining speculative decoding success.
 
 ---
 
-## ✨ Why It’s Exciting
+## Results and Insights
 
-This isn’t just a faster way to decode—it’s a smarter way to understand hybrid language models and their architectures. Whether you're a researcher or a developer, this project opens doors to:  
-- Efficient AI systems with minimal computational cost.  
-- Insights into next-gen hybrid architectures.  
-- Applications in real-world tasks needing lightning-fast autoregressive inference.  
+### Key Findings
+1. **Scale Independence**  
+   The performance of Falcon-H1 remains consistent across different model sizes—from 0.5 billion to 3 billion parameters.
+
+2. **Predictive Indicators**  
+   An ablation study reveals that monitoring perplexity degradation can predict the success of speculative decoding, offering a practical way to assess hybrid architectures.
+
+3. **Efficiency Metrics**  
+   Models with better internal composition achieve faster and more intelligent speculative decoding, emphasizing the importance of architectural design.
 
 ---
 
-## 📬 Get Involved  
+## Getting Started
 
-Have questions or ideas? Reach out via issues or contribute to the repository! Let’s decode the future together. 🚀  
+Follow the steps below to use the code:
+
+### Clone the Repository
+```bash
+git clone https://github.com/your-repo/component-aware-decoding.git
+cd component-aware-decoding
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Run Speculative Decoding Experiments
+To test speculative decoding on a hybrid model:
+```bash
+python decode_hybrid.py --model falcon-h1 --draft_length 2
+```
+
+### Visualize Results
+Plot experimental outcomes using the built-in visualization tools:
+```bash
+python plot_results.py
+```
+
+---
+
+## Why This Matters
+
+This project is not just about faster text generation. It provides deeper insights into hybrid language model architectures, paving the way for:
+- Development of more computationally efficient AI systems.  
+- Enhanced understanding of speculative decoding mechanisms.  
+- Practical applications in tasks requiring rapid and accurate autoregressive inference.
+
+---
+
+## Contribute and Collaborate
+
+We welcome contributions and feedback! If you have questions, suggestions, or would like to report issues, please open an issue or submit a pull request. Together, let's innovate in hybrid language modeling and speculative decoding.
 
 ---
